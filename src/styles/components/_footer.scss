@@ -1,0 +1,23 @@
+@import "../variables";
+@import "../mixins-and-functions";
+
+.footer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-end;
+	gap: $gap-2x $gap-4x;
+	padding-top: $gap-29x;
+	padding-bottom: $gap-12x;
+}
+
+.footer__column {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: $gap-2x;
+
+	@include media(sm) {
+		gap: unset;
+	}
+}

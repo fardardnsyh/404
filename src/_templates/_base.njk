@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html class="page" lang="{{ page.lang }}">
+<head>
+	{% include "head_seo.njk" %}
+	{% include "head_open-graph.njk" %}
+	{% include "head_schema.org.njk" %}
+	<script defer src="{{ "/scripts/bundle.js" | filehash }}"></script>
+	<link rel="stylesheet" href="{{ "/styles/styles.css" | filehash }}">
+	{% include "head_favicons.njk" %}
+	<link rel="alternate" type="application/rss+xml" title="{{ "site description" | translate | safe }}" href="{{ site.url }}{{ "feedUrl" | translate }}">
+</head>
+
+<body class="base" data-theme="light">
+	{% include "header.njk" %}
+	<div class="base__body wrapper">
+		<main>
+			{% if layout !== "article.njk" %}
+				<h1>{{ title }}</h1>
+			{% endif %}
+			{{ content | safe }}
+		</main>
+	</div>
+	{% include "footer.njk" %}
+
+	{% if env === "production" %}
+		<script>
+			setTimeout(function(){
+				{#Yandex.Metrika#}
+				(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js", "ym"); ym(83045434, "init", { clickmap:false, trackLinks:false, accurateTrackBounce:true});
+			}, 2000);
+		</script>
+		<script defer="defer" data-domain="a11y-blog.dev" src="https://analytics.vasiliy-dudin.com/js/script.js"></script>
+	{% endif %}
+</body>
+</html>

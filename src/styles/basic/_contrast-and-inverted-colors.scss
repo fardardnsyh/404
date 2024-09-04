@@ -1,0 +1,37 @@
+@import "../variables";
+
+// High contrast mode
+@media (forced-colors: active) {
+	::selection {
+		background: Highlight;
+	}
+
+	a:hover {
+		color: Canvas;
+		background: CanvasText;
+	}
+
+	.cards__item {
+		border: 2px solid transparent;
+	}
+
+	.cards__item:focus-within {
+		@include focus (
+			$width: 4px,
+			$offset: 2px,
+			$color: transparent
+		);
+	}
+
+	.logo__svg-path {
+		fill: none;
+	}
+}
+
+// Inverted colors mode
+@media (inverted-colors) {
+	.wrapper img,
+	.wrapper video {
+		filter: invert(100%);
+	}
+}

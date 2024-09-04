@@ -1,0 +1,115 @@
+@import "../variables";
+@import "../mixins-and-functions";
+
+.cards {
+	display: inline-flex;
+	flex-direction: column;
+	width: 100%;
+	margin-top: 0;
+	padding: 0;
+	gap: $gap-5x;
+}
+
+h2:has(+ .cards) {
+	margin-bottom: fluidSizes($gap-32, $gap-36);
+}
+
+.cards:has(+ a) {
+	margin-bottom: fluidSizes($gap-20, $gap-24);
+}
+
+.cards--in-article {
+	@include media(md) {
+		flex-direction: row;
+	}
+}
+
+.cards__item {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	padding: $gap-4x;
+	gap: $gap-4x;
+	background: var(--bg-part-color);
+	border-radius: $radius-26;
+
+	&:before {
+		content: "";
+		position: absolute;
+	}
+
+	&:hover {
+		background: var(--color-hover);
+	}
+
+	@include media(md) {
+		padding: $gap-10x;
+	}
+}
+
+.cards__item--compact {
+	display: inline-flex;
+	padding: $gap-5x;
+}
+
+.cards__item-heading {
+	margin-top: 0;
+}
+
+.cards__item:focus-within {
+	@include focus (
+		$width: 4px,
+		$offset: 2px
+	);
+}
+
+.cards__item-heading-link:focus-visible,
+.cards__item-link:focus-visible {
+	outline: 0;
+}
+
+.cards__item-heading-link,
+.cards__item-link {
+	font-weight: bold;
+	color: inherit;
+	border-bottom: 0;
+
+	&:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	&:hover {
+		color: inherit;
+		background: inherit;
+		border-bottom: 0;
+	}
+}
+
+.cards__item-details {
+	display: inline-flex;
+	align-items: center;
+	gap: $gap-2x;
+}
+
+.cards__item-details__ico {
+	width: 1rem;
+	height: auto;
+	stroke: currentColor;
+}
+
+.cards__item-description {
+	margin: 0;
+}
+
+.cards__item-date {
+	display: inline-flex;
+	align-items: center;
+	gap: $gap-1x;
+}

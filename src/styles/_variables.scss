@@ -1,0 +1,87 @@
+// Colors
+$beige-1: #dae3e4;
+$beige-2: #c8d5d6;
+
+$green-1: #b7caca;
+
+$blue-1: #d0dceb;
+$blue-2: #b6c7dc;
+$blue-3: #859ab4;
+$blue-4: #65778e;
+$blue-5: #566c87;
+$blue-6: #435872;
+$blue-7: #2f445d;
+$blue-8: #1b2c41;
+$blue-9: #14202f;
+
+$accent-color-1: #c7759e;
+$accent-color-2: #b3a8db;
+$fuchsia-alpha: #c7759e3a;
+
+// Images
+$img-filter: unset;
+$img-filter--dark: brightness(.8) contrast(1.2);
+
+// Gaps
+$gap-1x: 4px;
+$gap-2x: $gap-1x * 2; // 8px
+$gap-3x: $gap-1x * 3; // 12px
+$gap-4x: $gap-1x * 4; // 16px
+$gap-5x: $gap-1x * 5; // 20px
+$gap-6x: $gap-1x * 6; // 24px
+$gap-7x: $gap-1x * 7; // 28px
+$gap-8x: $gap-1x * 8; // 32px
+$gap-9x: $gap-1x * 9; // 36px
+$gap-10x: $gap-1x * 10; // 40px
+$gap-12x: $gap-1x * 12; // 48px
+$gap-13x: $gap-1x * 13; // 52px
+$gap-14x: $gap-1x * 14; // 56px
+$gap-15x: $gap-1x * 15; // 60px
+$gap-29x: $gap-1x * 29; // 116px
+
+// Border radius
+$radius-4: 4px;
+$radius-8: 8px;
+$radius-10: 10px;
+$radius-16: 16px;
+$radius-24: 24px;
+$radius-26: 26px;
+$radius-32: 32px;
+
+$gap-2: 2px;
+$gap-4: 4px;
+$gap-8: 8px;
+$gap-12: 12px;
+$gap-14: 14px;
+$gap-15: 15px;
+$gap-16: 16px;
+$gap-20: 20px;
+$gap-24: 24px;
+$gap-28: 28px;
+$gap-32: 32px;
+$gap-36: 36px;
+$gap-40: 40px;
+$gap-44: 44px;
+$gap-48: 48px;
+$gap-52: 52px;
+$gap-56: 56px;
+$gap-60: 60px;
+$gap-116: 116px;
+
+// Grid breakpoints and container min-widths
+$breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px
+);
+
+$container-widths: (
+	sm: 540px,
+	md: 780px,
+	lg: 960px,
+	xl: 1020px,
+	xxl: 1320px
+);

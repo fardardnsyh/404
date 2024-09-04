@@ -1,0 +1,38 @@
+@use 'sass:math';
+@import "variables";
+
+// @media
+@mixin media($widthName) {
+	$width: map-get($breakpoints, $widthName);
+	@media (width >= $width) {
+		@content;
+	}
+}
+
+// Outline styles
+@mixin focus($width: 3px, $offset, $color: var(--border-color), $style: dotted) {
+	outline-width: $width;
+	outline-offset: $offset;
+	outline-style: $style;
+	outline-color: $color;
+}
+
+// Typography
+$font-size-default: 16px;
+$preferredValCalc: calc(1.25rem + 4.2254 * (1vw - 6px));
+
+@function fromPx($value) {
+	@return math.div($value, $value * 0 + 1);
+}
+
+@function toRem($size) {
+	@return #{math.div(fromPx($size), fromPx($font-size-default))}rem;
+}
+
+@function fluidSizes($minVal, $maxVal, $preferredVal: $preferredValCalc) {
+	@return clamp(
+		toRem($minVal), 
+		$preferredVal, 
+		toRem($maxVal)
+	);
+}

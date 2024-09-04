@@ -1,0 +1,14 @@
+@import "../variables";
+@import "../mixins-and-functions";
+
+.header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: $gap-6x;
+
+	@include media(lg) {
+		flex-direction: row;
+		gap: $gap-8x;
+	}
+}

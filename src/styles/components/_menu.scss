@@ -1,0 +1,57 @@
+@import "../variables";
+@import "../mixins-and-functions";
+
+$line-height-menu-link: 1.7;
+
+.navigation {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 100%;
+	gap: $gap-4x;
+
+	@include media(lg) {
+		justify-content: space-between;
+	}
+}
+
+.navigation__list {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.navigation__list-item {
+	margin: 0;
+	padding: 0;
+}
+
+.navigation__list-item-link {
+	display: inline-flex;
+	align-items: center;
+	position: relative;
+	width: 100%;
+	padding: $gap-3x;
+	gap: $gap-2x;
+	line-height: $line-height-menu-link;
+	border-bottom: 0;
+
+	&:hover {
+		background: inherit;
+		color: var(--menu-elements-color-hover);
+	}
+
+	@include media(lg) {
+		padding: $gap-5x;
+	}
+}
+
+.navigation__list-item-ico {
+	width: 2rem;
+	height: auto;
+	stroke: currentColor;
+}

@@ -1,0 +1,25 @@
+@import "../variables";
+
+.topics {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	gap: $gap-1x;
+	list-style: none;
+}
+
+.topics--in-article {
+	justify-content: center;
+}
+
+.topics--in-card {
+	margin-bottom: $gap-3x;
+}
+
+.topics__item {
+	padding: $gap-1x $gap-2x;
+	color: var(--text-color);
+	border: 1px solid var(--border-color);
+	border-radius: $radius-10;
+}

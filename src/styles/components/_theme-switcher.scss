@@ -1,0 +1,65 @@
+@import "../variables";
+@import "../mixins-and-functions";
+
+.header__switcher {
+	display: flex;
+	padding: $gap-1x;
+	padding-inline: $gap-1x;
+	border: 3px solid var(--border-color);
+	border-radius: $radius-32;
+	user-select: none;
+}
+
+.header__switcher-button {
+	margin: 0;
+	padding: $gap-3x $gap-4x;
+	border: 2px solid transparent;
+	border-radius: $radius-32;
+	color: var(--text-color);
+	background: transparent;
+	cursor: pointer;
+
+	&:nth-last-child(1) {
+		border-radius: 3px $radius-32 $radius-32 3px;
+	}
+
+	&:nth-last-child(2) {
+		border-radius: $radius-32 3px 3px $radius-32;
+	}
+
+	&[aria-pressed="true"]:focus-visible {
+		@include focus (
+			$offset: -7px,
+			$color: var(--button-text-color)
+		);
+	}
+
+	&[aria-pressed="false"]:focus-visible {
+		@include focus (
+			$offset: -3px,
+		);
+	}
+
+	@include media(lg) {
+		padding: $gap-2x $gap-3x;
+	}
+}
+
+.header__switcher-button[aria-pressed="true"] {
+	color: var(--button-text-color);
+	background: var(--button-bg-color);
+
+	&:hover {
+		color: var(--button-text-color);
+		background: var(--menu-elements-color-hover);
+	}
+}
+
+.header__switcher-button[aria-pressed="false"] {
+	color: inherit;
+
+	&:hover {
+		color: var(--button-text-color);
+		background: var(--menu-elements-color-hover);
+	}
+}

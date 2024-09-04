@@ -1,0 +1,28 @@
+@import "../mixins-and-functions";
+@import "../variables";
+
+*, *::before, *::after {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.base {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	margin: 0;
+	color: var(--text-color);
+	background: var(--bg-color);
+}
+
+.wrapper {
+	max-width: map-get($container-widths, md);
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 $gap-5x;
+}
+
+.base__body {
+	flex: 1 0 auto;
+	margin-top: fluidSizes($gap-52, $gap-60);
+}
